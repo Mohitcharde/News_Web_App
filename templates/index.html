@@ -1,0 +1,115 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart News App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #0ea5e9);
+      color: white;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.12);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>📰 Smart News App</h1>
+
+    <form method="POST" class="search-box">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search topic like AI, Cricket, Technology..."
+        value="{{ query }}"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+
+    {% if articles %}
+      {% for article in articles %}
+        <div class="card">
+          <h3>{{ article.title }}</h3>
+          <p><strong>Source:</strong> {{ article.source.name }}</p>
+          <a href="{{ article.url }}" target="_blank">
+            Read Full News →
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p style="text-align:center;">
+        Search any topic to explore latest headlines
+      </p>
+    {% endif %}
+
+    <div class="footer">
+      Made by Mohit Charde
+    </div>
+  </div>
+
+</body>
+</html>
