@@ -33,7 +33,11 @@ python app.py
 
 Then open browser:
 
-https://news-web-app-04a3.onrender.com
+1. Main page
+https://news-web-app-04a3.onrender.com/
+
+2. News page
+https://news-web-app-04a3.onrender.com/home
 
 ## 🔑 API Key Setup
 
