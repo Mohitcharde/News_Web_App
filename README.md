@@ -33,7 +33,7 @@ python app.py
 
 Then open browser:
 
-http://127.0.0.1:5000/
+https://news-web-app-04a3.onrender.com
 
 ## 🔑 API Key Setup
 
